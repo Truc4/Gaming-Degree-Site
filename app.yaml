@@ -1,0 +1,5 @@
+kind: wasmer.io/App.v0
+name: Gaming-Degree-Tracker
+owner: truc4
+package: .
+app_id: da_KwGIWtMUQr76

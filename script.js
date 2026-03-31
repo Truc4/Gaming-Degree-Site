@@ -53,6 +53,11 @@ function openCourseModal(course) {
         `;
     });
 
+    // Calculate how many games need to be completed
+    const firstGameCredits = course.games[0]?.credits || course.credits;
+    const gamesNeeded = Math.ceil(course.credits / firstGameCredits);
+    const gamesText = gamesNeeded === 1 ? `1 of the following:` : `${gamesNeeded} of the following:`;
+
     const completed = isCompleted(course.code);
     const checkedAttr = completed ? 'checked' : '';
 
@@ -67,7 +72,7 @@ function openCourseModal(course) {
             <div class="modal-body">
                 <p class="modal-credits"><strong>${course.credits}</strong> credits</p>
 
-                <h3>Games</h3>
+                <h3>${course.games.length > 1 ? gamesText : 'Game'}</h3>
                 <div class="games-list">
                     ${gamesHtml}
                 </div>
