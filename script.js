@@ -149,11 +149,55 @@ function getCompletedCourses() {
     return Object.values(state).filter(v => v).length;
 }
 
+function getRequiredCreditsForSection(section) {
+    // Parse required credits from the "required" field (e.g., "All 6 courses (25 credits required)")
+    const match = section.required.match(/(\d+)\s+credits\s+required/);
+    return match ? parseInt(match[1]) : 0;
+}
+
+function getCompletedCreditsForSection(section) {
+    const state = getCompletionState();
+    let credits = 0;
+
+    if (section.courses[0]?.section) {
+        // Has subsections
+        section.courses.forEach(subsection => {
+            subsection.courses.forEach(course => {
+                if (state[course.code]) {
+                    credits += course.credits;
+                }
+            });
+        });
+    } else {
+        // Regular courses
+        section.courses.forEach(course => {
+            if (state[course.code]) {
+                credits += course.credits;
+            }
+        });
+    }
+    return credits;
+}
+
 function updateProgress() {
-    const totalCredits = getTotalCredits();
-    const completedCredits = getCompletedCredits();
+    let totalSectionPercentage = 0;
+    let sectionCount = 0;
+
+    degreeData.sections.forEach(section => {
+        const requiredCredits = getRequiredCreditsForSection(section);
+        const completedCredits = getCompletedCreditsForSection(section);
+        // Calculate percentage for this section, capped at 100%
+        const sectionPercentage = Math.min(
+            Math.round((completedCredits / requiredCredits) * 100),
+            100
+        );
+        totalSectionPercentage += sectionPercentage;
+        sectionCount++;
+    });
+
+    // Average the section percentages
+    const percentage = sectionCount > 0 ? Math.round(totalSectionPercentage / sectionCount) : 0;
     const completedCourses = getCompletedCourses();
-    const percentage = Math.round((completedCredits / totalCredits) * 100);
 
     const percentageEl = document.getElementById('progressPercentage');
     const fillEl = document.getElementById('progressFill');
@@ -162,7 +206,7 @@ function updateProgress() {
     if (percentageEl) {
         percentageEl.textContent = percentage + '%';
         fillEl.style.width = percentage + '%';
-        detailsEl.innerHTML = `<span class="completed-count">${completedCredits} of ${totalCredits} credits • ${completedCourses} courses completed</span>`;
+        detailsEl.innerHTML = `<span class="completed-count">${completedCourses} courses completed</span>`;
     }
 }
 
