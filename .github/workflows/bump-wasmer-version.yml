@@ -1,0 +1,55 @@
+name: Bump Wasmer Version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check if commit message contains skip marker
+        id: should_bump
+        run: |
+          if git log -1 --pretty=%B | grep -q "\[skip-version-bump\]"; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Bump version in wasmer.toml
+        if: steps.should_bump.outputs.skip == 'false'
+        run: |
+          python3 << 'EOF'
+          import re
+
+          with open('wasmer.toml', 'r') as f:
+              content = f.read()
+
+          # Extract current version
+          match = re.search(r'version = "(\d+)\.(\d+)\.(\d+)"', content)
+          if match:
+              major, minor, patch = match.groups()
+              new_version = f"{major}.{minor}.{int(patch) + 1}"
+              new_content = re.sub(
+                  r'version = "[^"]+"',
+                  f'version = "{new_version}"',
+                  content
+              )
+
+              with open('wasmer.toml', 'w') as f:
+                  f.write(new_content)
+              print(f"Bumped version to {new_version}")
+          EOF
+
+      - name: Commit and push version bump
+        if: steps.should_bump.outputs.skip == 'false'
+        run: |
+          git config --local user.email "github-actions@github.com"
+          git config --local user.name "github-actions[bot]"
+          git add wasmer.toml
+          git commit -m "chore: bump wasmer version [skip-version-bump]" || echo "No changes to commit"
+          git push

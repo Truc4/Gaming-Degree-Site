@@ -10,4 +10,4 @@ module = { inherit = true }
 runner = "https://webassets.wasmer.sh/runners/http-server/http_server.wasm"
 
 [fs]
-"/public" = "."
+"/" = "."
