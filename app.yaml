@@ -1,5 +1,5 @@
-kind: wasmer.io/App.v0
 name: Gaming-Degree-Tracker
+app_id: da_KwGIWtMUQr76
 owner: truc4
 package: .
-app_id: da_KwGIWtMUQr76
+kind: wasmer.io/App.v0

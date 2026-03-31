@@ -123,6 +123,21 @@ const degreeData = {
               requirements: "Complete the game",
               credits: 5,
             },
+            {
+              name: "Noita",
+              requirements: "Complete the game",
+              credits: 5,
+            },
+            {
+              name: "Expedition 33",
+              requirements: "Complete the game",
+              credits: 5,
+            },
+            {
+              name: "Starbound",
+              requirements: "Complete the main story",
+              credits: 5,
+            },
           ],
         },
         {
