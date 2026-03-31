@@ -58,6 +58,68 @@ header h1 {
     margin-bottom: 40px;
 }
 
+.completion-message {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 2px solid var(--success);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: slideDown 0.5s ease;
+}
+
+.completion-message h2 {
+    color: var(--success);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.completion-message p {
+    color: var(--success);
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.completion-progress-card {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 2px solid var(--success);
+    animation: slideDown 0.5s ease;
+}
+
+.completion-progress-card .progress-info h2 {
+    color: var(--success);
+}
+
+.completion-progress-card .progress-percentage {
+    color: var(--success);
+    font-size: 2em;
+}
+
+.completion-progress-bar {
+    background: #d1fae5;
+    border: 1px solid var(--success);
+}
+
+.completion-progress-fill {
+    background: linear-gradient(90deg, var(--success), #10b981);
+}
+
+.completion-progress-card .progress-details {
+    color: var(--success);
+    font-weight: 600;
+}
+
 .progress-card {
     background: white;
     border: 2px solid var(--border);

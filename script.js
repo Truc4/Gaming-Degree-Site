@@ -101,6 +101,14 @@ function closeModal() {
 function getTotalCredits() {
     let total = 0;
     degreeData.sections.forEach(section => {
+        total += getRequiredCreditsForSection(section);
+    });
+    return total;
+}
+
+function getMaxPossibleCredits() {
+    let total = 0;
+    degreeData.sections.forEach(section => {
         if (section.courses[0]?.section) {
             // Has subsections
             section.courses.forEach(subsection => {
@@ -182,6 +190,7 @@ function getCompletedCreditsForSection(section) {
 function updateProgress() {
     let totalSectionPercentage = 0;
     let sectionCount = 0;
+    let allSectionsComplete = true;
 
     degreeData.sections.forEach(section => {
         const requiredCredits = getRequiredCreditsForSection(section);
@@ -193,20 +202,50 @@ function updateProgress() {
         );
         totalSectionPercentage += sectionPercentage;
         sectionCount++;
+
+        // Check if this section is incomplete
+        if (sectionPercentage < 100) {
+            allSectionsComplete = false;
+        }
     });
 
     // Average the section percentages
     const percentage = sectionCount > 0 ? Math.round(totalSectionPercentage / sectionCount) : 0;
     const completedCourses = getCompletedCourses();
+    const totalCredits = getTotalCredits();
+    const completedCredits = getCompletedCredits();
 
-    const percentageEl = document.getElementById('progressPercentage');
-    const fillEl = document.getElementById('progressFill');
-    const detailsEl = document.getElementById('progressDetails');
+    const completionEl = document.getElementById('completionMessage');
+    const inProgressCard = document.getElementById('inProgressCard');
+    const completionCard = document.getElementById('completionCard');
 
-    if (percentageEl) {
-        percentageEl.textContent = percentage + '%';
-        fillEl.style.width = percentage + '%';
-        detailsEl.innerHTML = `<span class="completed-count">${completedCourses} courses completed</span>`;
+    // Show congratulations message if degree is complete
+    if (allSectionsComplete && percentage === 100) {
+        completionEl.style.display = 'block';
+        inProgressCard.style.display = 'none';
+        completionCard.style.display = 'block';
+
+        // Update completion card with total credits vs max possible
+        const maxCredits = getMaxPossibleCredits();
+        const creditsPercentage = Math.round((completedCredits / maxCredits) * 100);
+        document.getElementById('creditsPercentage').textContent = `${completedCredits}/${maxCredits}`;
+        document.getElementById('creditsProgressFill').style.width = creditsPercentage + '%';
+        document.getElementById('creditsProgressDetails').innerHTML = `<span class="completed-count">${completedCredits} of ${totalCredits} required credits earned</span>`;
+    } else {
+        completionEl.style.display = 'none';
+        inProgressCard.style.display = 'block';
+        completionCard.style.display = 'none';
+
+        // Update in-progress card
+        const percentageEl = document.getElementById('progressPercentage');
+        const fillEl = document.getElementById('progressFill');
+        const detailsEl = document.getElementById('progressDetails');
+
+        if (percentageEl) {
+            percentageEl.textContent = percentage + '%';
+            fillEl.style.width = percentage + '%';
+            detailsEl.innerHTML = `<span class="completed-count">${completedCourses} courses completed</span>`;
+        }
     }
 }
 

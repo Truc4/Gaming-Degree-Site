@@ -1,73 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bachelor of Gaming Arts (B.G.A.) - Degree Plan</title>
-    <meta property="og:title" content="Gaming Degree Tracker">
-    <meta property="og:description" content="Do you have your gaming degree? Find out now!">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <meta property="og:title" content="Gaming Degree Tracker" />
+    <meta
+      property="og:description"
+      content="Do you have your gaming degree? Find out now!"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>Bachelor of Gaming Arts</h1>
-            <p class="subtitle">B.G.A. Catalog Year: 2026–2027</p>
-        </header>
+      <header>
+        <h1>Bachelor of Gaming Arts</h1>
+        <p class="subtitle">B.G.A. Catalog Year: 2026–2027</p>
+      </header>
 
-        <section class="progress-section">
-            <div class="progress-card">
-                <div class="progress-info">
-                    <h2>Your Progress</h2>
-                    <div class="progress-percentage" id="progressPercentage">0%</div>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
-                </div>
-                <div class="progress-details" id="progressDetails">
-                    <span class="completed-count">0 courses completed</span>
-                </div>
+      <section class="progress-section">
+        <div
+          id="completionMessage"
+          class="completion-message"
+          style="display: none"
+        >
+          <h2>Congratulations!!</h2>
+          <p>
+            You have completed your degree! Use your Gamer License with pride.
+          </p>
+        </div>
+        <div id="inProgressCard" class="progress-card">
+          <div class="progress-info">
+            <h2>Your Progress</h2>
+            <div class="progress-percentage" id="progressPercentage">0%</div>
+          </div>
+          <div class="progress-bar">
+            <div
+              class="progress-fill"
+              id="progressFill"
+              style="width: 0%"
+            ></div>
+          </div>
+          <div class="progress-details" id="progressDetails">
+            <span class="completed-count">0 courses completed</span>
+          </div>
+        </div>
+        <div
+          id="completionCard"
+          class="progress-card completion-progress-card"
+          style="display: none"
+        >
+          <div class="progress-info">
+            <h2>Total Credits</h2>
+            <div class="progress-percentage" id="creditsPercentage">
+              120/120
             </div>
-        </section>
+          </div>
+          <div class="progress-bar completion-progress-bar">
+            <div
+              class="progress-fill completion-progress-fill"
+              id="creditsProgressFill"
+              style="width: 100%"
+            ></div>
+          </div>
+          <div class="progress-details" id="creditsProgressDetails">
+            <span class="completed-count">All 120 credits earned</span>
+          </div>
+        </div>
+      </section>
 
-        <section class="summary">
-            <h2>Program Summary</h2>
-            <div class="credits-grid">
-                <div class="credit-item">
-                    <span class="credit-label">General Education</span>
-                    <span class="credit-value">25</span>
-                </div>
-                <div class="credit-item">
-                    <span class="credit-label">Depth Education</span>
-                    <span class="credit-value">10</span>
-                </div>
-                <div class="credit-item">
-                    <span class="credit-label">Pre-Professional</span>
-                    <span class="credit-value">35</span>
-                </div>
-                <div class="credit-item">
-                    <span class="credit-label">Professional</span>
-                    <span class="credit-value">35</span>
-                </div>
-                <div class="credit-item">
-                    <span class="credit-label">Electives</span>
-                    <span class="credit-value">15</span>
-                </div>
-            </div>
-            <div class="total-credits">
-                <strong>TOTAL: 120 credits</strong>
-            </div>
-        </section>
+      <section class="summary">
+        <h2>Program Summary</h2>
+        <div class="credits-grid">
+          <div class="credit-item">
+            <span class="credit-label">General Education</span>
+            <span class="credit-value">25</span>
+          </div>
+          <div class="credit-item">
+            <span class="credit-label">Depth Education</span>
+            <span class="credit-value">10</span>
+          </div>
+          <div class="credit-item">
+            <span class="credit-label">Pre-Professional</span>
+            <span class="credit-value">35</span>
+          </div>
+          <div class="credit-item">
+            <span class="credit-label">Professional</span>
+            <span class="credit-value">35</span>
+          </div>
+          <div class="credit-item">
+            <span class="credit-label">Electives</span>
+            <span class="credit-value">15</span>
+          </div>
+        </div>
+        <div class="total-credits">
+          <strong>TOTAL: 120 credits</strong>
+        </div>
+      </section>
 
-        <section id="sections-container"></section>
+      <section id="sections-container"></section>
 
-        <footer>
-            <button class="reset-button" onclick="resetProgress()">Reset All Progress</button>
-        </footer>
+      <footer>
+        <button class="reset-button" onclick="resetProgress()">
+          Reset All Progress
+        </button>
+      </footer>
     </div>
 
     <script src="data.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
