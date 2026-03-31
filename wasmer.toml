@@ -2,8 +2,12 @@
 name = "gaming-degree-site"
 version = "0.1.0"
 description = "Gaming Degree Site"
+publish = { registries = ["wasmer"] }
 
 [[command]]
 name = "serve"
 module = { inherit = true }
 runner = "https://webassets.wasmer.sh/runners/http-server/http_server.wasm"
+
+[fs]
+"/public" = "."
