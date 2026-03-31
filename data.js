@@ -59,7 +59,7 @@ const degreeData = {
                     title: "Multiplayer Literacy",
                     credits: 5,
                     games: [
-                        { name: "Mario Kart 8 Deluxe", requirements: "Win 50 online races or complete all 144cc cups", credits: 5 },
+                        { name: "Mario Kart 8 Deluxe", requirements: "Win 50 online races or complete Grand Prix on 150cc difficulty", credits: 5 },
                         { name: "Super Smash Bros. Ultimate", requirements: "Unlock 20 characters and win 30 matches online or in arcade mode", credits: 5 },
                         { name: "Fortnite Battle Royale", requirements: "Achieve 10 Victory Royales or reach Level 100", credits: 5 }
                     ]
@@ -80,7 +80,9 @@ const degreeData = {
                         { name: "Undertale", requirements: "Complete the game on any route and reach one of three endings (True Pacifist, Genocide, Neutral)", credits: 5 },
                         { name: "Hades", requirements: "Clear the game (escape from Hell once) and unlock 10 weapon aspects", credits: 5 },
                         { name: "Celeste", requirements: "Beat all 8 main levels and collect 20 strawberries and 4 crystal hearts", credits: 5 },
-                        { name: "Hollow Knight", requirements: "Defeat the Hollow Knight boss and collect 20 Vessel Fragments", credits: 5 }
+                        { name: "Hollow Knight", requirements: "Defeat the Hollow Knight boss and collect 20 Vessel Fragments", credits: 5 },
+                        { name: "Five Nights at Freddy's", requirements: "Survive all 5 nights on Night 4+ difficulty and unlock custom night mode", credits: 4 },
+                        { name: "REPO", requirements: "Complete 10 expeditions on Moderate difficulty or higher and escape with team intact", credits: 5 }
                     ]
                 },
                 {
