@@ -1,5 +1,5 @@
 [package]
-name = "gaming-degree-site"
+name = "Gaming-Degree-Tracker"
 version = "0.1.1"
 description = "Gaming Degree Site"
 publish = { registries = ["wasmer"] }
