@@ -1,0 +1,12 @@
+kind: wasmer.io/App.v0
+metadata:
+  name: Gaming-Degree-Tracker
+spec:
+  runner: https://webassets.wasmer.sh/runners/http-server/http_server.wasm
+  volumes:
+    - mount_path: /
+      name: root
+  mounts:
+    root:
+      kind: dir
+      path: .
