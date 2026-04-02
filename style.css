@@ -303,6 +303,11 @@ header h1 {
 
 .subsection {
     margin-bottom: 20px;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    align-items: start;
 }
 
 .subsection-title {
@@ -312,6 +317,7 @@ header h1 {
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--border);
+    grid-column: 1 / -1;
 }
 
 .course-card {
@@ -596,6 +602,10 @@ footer {
     }
 
     .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subsection {
         grid-template-columns: 1fr;
     }
 

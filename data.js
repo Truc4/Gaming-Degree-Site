@@ -258,7 +258,7 @@ const degreeData = {
             },
             {
               name: "The Sims 4",
-              requirements: "Play through at least one full family story",
+              requirements: "Build a family and reach one generation milestone",
               credits: 5,
             },
             {
@@ -286,6 +286,11 @@ const degreeData = {
             {
               name: "World of Warcraft",
               requirements: "Reach max level",
+              credits: 5,
+            },
+            {
+              name: "MapleStory",
+              requirements: "Reach Level 50",
               credits: 5,
             },
           ],
@@ -681,6 +686,38 @@ const degreeData = {
                 {
                   name: "Destiny 2",
                   requirements: "Complete the main campaign",
+                  credits: 4,
+                },
+              ],
+            },
+            {
+              code: "GAM 4415",
+              title: "Free-to-Play Economics",
+              credits: 4,
+              games: [
+                {
+                  name: "Genshin Impact",
+                  requirements: "Complete Prologue and reach Adventurer Rank 20",
+                  credits: 4,
+                },
+                {
+                  name: "Honkai: Star Rail",
+                  requirements: "Complete Prologue and reach Trailblaze Level 20",
+                  credits: 4,
+                },
+                {
+                  name: "Fire Emblem Heroes",
+                  requirements: "Complete Story Mode Chapter 1",
+                  credits: 4,
+                },
+                {
+                  name: "Fate/Grand Order",
+                  requirements: "Complete Fuyuki Singularity",
+                  credits: 4,
+                },
+                {
+                  name: "Arknights",
+                  requirements: "Complete Prologue",
                   credits: 4,
                 },
               ],
@@ -1088,18 +1125,43 @@ const degreeData = {
               credits: 3,
               games: [
                 {
-                  name: "The Legend of Zelda: A Link to the Past",
-                  requirements: "Defeat Ganon",
+                  name: "The Legend of Zelda",
+                  requirements: "Defeat Ganon and collect all triforce pieces",
                   credits: 3,
                 },
                 {
-                  name: "The Legend of Zelda: Majora's Mask",
-                  requirements: "Defeat Majora",
+                  name: "Zelda II: The Adventure of Link",
+                  requirements: "Collect all crystals and awaken Zelda",
                   credits: 3,
                 },
                 {
-                  name: "The Legend of Zelda: Wind Waker",
+                  name: "The Legend of Zelda: Link's Awakening",
+                  requirements: "Awaken the Wind Fish",
+                  credits: 3,
+                },
+                {
+                  name: "The Legend of Zelda: Oracle of Seasons",
+                  requirements: "Defeat Onox",
+                  credits: 3,
+                },
+                {
+                  name: "The Legend of Zelda: Oracle of Ages",
+                  requirements: "Defeat Veran",
+                  credits: 3,
+                },
+                {
+                  name: "The Legend of Zelda: The Wind Waker",
                   requirements: "Defeat Ganondorf",
+                  credits: 3,
+                },
+                {
+                  name: "The Legend of Zelda: Four Swords Adventures",
+                  requirements: "Defeat Vaati and Ganon",
+                  credits: 3,
+                },
+                {
+                  name: "The Legend of Zelda: The Minish Cap",
+                  requirements: "Defeat Vaati",
                   credits: 3,
                 },
                 {
@@ -1108,13 +1170,80 @@ const degreeData = {
                   credits: 3,
                 },
                 {
-                  name: "The Legend of Zelda: Breath of the Wild",
+                  name: "The Legend of Zelda: Phantom Hourglass",
+                  requirements: "Defeat Bellum",
+                  credits: 3,
+                },
+                {
+                  name: "The Legend of Zelda: Spirit Tracks",
+                  requirements: "Defeat Malladus",
+                  credits: 3,
+                },
+                {
+                  name: "The Legend of Zelda: Skyward Sword",
+                  requirements: "Defeat Demise",
+                  credits: 3,
+                },
+                {
+                  name: "The Legend of Zelda: A Link Between Worlds",
                   requirements: "Defeat Ganon",
                   credits: 3,
                 },
                 {
-                  name: "The Legend of Zelda: Tears of the Kingdom",
-                  requirements: "Defeat Ganondorf",
+                  name: "The Legend of Zelda: Echoes of Wisdom",
+                  requirements: "Defeat the Demon King",
+                  credits: 3,
+                },
+              ],
+            },
+            {
+              code: "GAM 5150",
+              title: "Pokemon Series",
+              credits: 3,
+              games: [
+                {
+                  name: "Pokemon Red/Blue",
+                  requirements: "Defeat the Elite Four",
+                  credits: 3,
+                },
+                {
+                  name: "Pokemon Gold/Silver",
+                  requirements: "Defeat the Elite Four",
+                  credits: 3,
+                },
+                {
+                  name: "Pokemon Ruby/Sapphire",
+                  requirements: "Defeat the Champion",
+                  credits: 3,
+                },
+                {
+                  name: "Pokemon Diamond/Pearl",
+                  requirements: "Defeat Cynthia",
+                  credits: 3,
+                },
+                {
+                  name: "Pokemon Black/White",
+                  requirements: "Defeat Iris",
+                  credits: 3,
+                },
+                {
+                  name: "Pokemon X/Y",
+                  requirements: "Defeat Diantha",
+                  credits: 3,
+                },
+                {
+                  name: "Pokemon Sun/Moon",
+                  requirements: "Defeat Ultra Necrozma",
+                  credits: 3,
+                },
+                {
+                  name: "Pokemon Sword/Shield",
+                  requirements: "Defeat Leon",
+                  credits: 3,
+                },
+                {
+                  name: "Pokemon Scarlet/Violet",
+                  requirements: "Defeat the Champion",
                   credits: 3,
                 },
               ],
@@ -1274,6 +1403,60 @@ const degreeData = {
                 {
                   name: "Spec Ops: The Line",
                   requirements: "Complete the main story",
+                  credits: 3,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          section: "MOBILE GAMES STUDY",
+          courses: [
+            {
+              code: "GAM 5250",
+              title: "Mobile Gaming Fundamentals",
+              credits: 3,
+              games: [
+                {
+                  name: "Candy Crush Saga",
+                  requirements: "Reach level 100",
+                  credits: 3,
+                },
+                {
+                  name: "Angry Birds",
+                  requirements: "Complete all main levels",
+                  credits: 3,
+                },
+                {
+                  name: "Clash of Clans",
+                  requirements: "Reach Town Hall level 8",
+                  credits: 3,
+                },
+                {
+                  name: "Doodle Jump",
+                  requirements: "Reach score of 50,000 points",
+                  credits: 3,
+                },
+              ],
+            },
+            {
+              code: "GAM 5255",
+              title: "Mobile Strategy & Complexity",
+              credits: 3,
+              games: [
+                {
+                  name: "Clash Royale",
+                  requirements: "Reach 4000 trophies",
+                  credits: 3,
+                },
+                {
+                  name: "Plants vs. Zombies",
+                  requirements: "Complete Adventure Mode",
+                  credits: 3,
+                },
+                {
+                  name: "Monument Valley",
+                  requirements: "Complete all levels",
                   credits: 3,
                 },
               ],
@@ -1820,11 +2003,6 @@ const degreeData = {
                 {
                   name: "Elden Ring",
                   requirements: "Reach any ending",
-                  credits: 4,
-                },
-                {
-                  name: "Red Dead Redemption 2",
-                  requirements: "Complete the main story",
                   credits: 4,
                 },
               ],
